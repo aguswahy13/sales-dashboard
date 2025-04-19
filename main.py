@@ -93,10 +93,10 @@ with top_col1:
     fig_prod = px.bar(prod_top, x='PRODUCT_CODE', y='Amount', title='Top 5 Products by Sales')
     st.plotly_chart(fig_prod, use_container_width=True)
 with top_col2:
-    st.subheader("Top 5 Line Sales")
+    st.subheader("Top Line Sales")
     line_agg = df_filtered.groupby('LINE_SALES').agg({'Amount': 'sum'}).reset_index()
     line_top = line_agg.sort_values('Amount', ascending=False).head(5)
-    fig_line = px.bar(line_top, x='LINE_SALES', y='Amount', title='Top 5 Line Sales by Amount')
+    fig_line = px.bar(line_top, x='LINE_SALES', y='Amount', title='Top Line Sales by Amount')
     st.plotly_chart(fig_line, use_container_width=True)
 
 # Time series chart
